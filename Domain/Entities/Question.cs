@@ -16,7 +16,7 @@ public class Question
 
     //Навигационные свойства для EntityFramework
     [ForeignKey("InterviewId")]
-    public Interview Interview { get; set; }
+    public virtual Interview Interview { get; set; }
 
-    public List<Answer> Answers { get; set; }
+    public virtual List<Answer> Answers { get; set; }
 }

@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Chilite.Domain.Entities;
 
@@ -18,5 +19,15 @@ public class Interview
     public DateTime EndDate { get; set; }
 
     //Навигационное свойство для EntityFramework
-    public List<Question> Questions { get; set; }
+    public virtual List<Question> Questions { get; set; }
+
+    public string UserId { get; set; }
+
+    [ForeignKey("UserId")]
+    public virtual ApplicationUser User { get; set; }
+
+    public string RoomId { get; set; }
+
+    [ForeignKey("RoomId")]
+    public virtual Room Room { get; set; }
 }

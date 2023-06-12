@@ -44,6 +44,18 @@ public class ApplicationDbContext : IdentityDbContext<IdentityUser>
             UserId = "CEE0ABB0-E53A-44E2-8287-87A3DCE8E7E2"
         });
 
+        builder.Entity<Interview>()
+            .HasOne(i => i.User)
+            .WithMany(u => u.Interviews)
+            .HasForeignKey(i => i.UserId)
+            .IsRequired();
+
+        builder.Entity<Interview>()
+            .HasOne(i => i.Room)
+            .WithMany(r => r.Interviews)
+            .HasForeignKey(i => i.RoomId)
+            .IsRequired();
+
         builder.Entity<Answer>().HasData(
             new Answer
             {
@@ -72,6 +84,8 @@ public class ApplicationDbContext : IdentityDbContext<IdentityUser>
                 Title = "За кадром: жизнь и карьера режиссера",
                 StartDate = DateTime.Now,
                 EndDate = DateTime.Now.AddHours(1),
+                UserId = "CEE0ABB0-E53A-44E2-8287-87A3DCE8E7E2",
+                RoomId = new Guid().ToString()
             }
         );
 

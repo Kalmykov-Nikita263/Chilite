@@ -1,32 +1,30 @@
-﻿using Chilite.Models;
+﻿using Chilite.Domain;
+using Chilite.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using System.Security.Claims;
 
-namespace Chilite.Controllers
+namespace Chilite.Controllers;
+
+[Authorize]
+public class HomeController : Controller
 {
-    public class HomeController : Controller
+    private readonly DataManager _dataManager;
+
+    public HomeController(DataManager dataManager)
     {
-        private readonly ILogger<HomeController> _logger;
+        _dataManager = dataManager;
+    }
 
-        public HomeController(ILogger<HomeController> logger)
-        {
-            _logger = logger;
-        }
+    public IActionResult Index()
+    {
+        return View(_dataManager.InterviewsRepository.GetAllInterviewsAsync().Where(i => i.UserId == User.FindFirst(ClaimTypes.NameIdentifier).Value));
+    }
 
-        public IActionResult Index()
-        {
-            return View();
-        }
-
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
+    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+    public IActionResult Error()
+    {
+        return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
 }

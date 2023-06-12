@@ -1,0 +1,52 @@
+﻿@model LoginViewModel
+
+@{
+    ViewData["Title"] = "Авторизация";
+}
+
+<form asp-area="" asp-controller="Account" asp-action="Login" method="post" asp-route-returnUrl="@ViewBag.returnUrl">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-5">
+                <div class="card mt-5">
+                    <div class="card-header">
+                        <h3 class="text-center mb-0">Вход в учётную запись</h3>
+                    </div>
+                    <div class="card-body">
+                        <div asp-validation-summary="All"></div>
+
+                        <div class="form-group">
+                            <label for="UserLogin">Логин:</label>
+                            <input class="form-control" type="text" asp-for="UserLogin" placeholder="Введите логин" required>
+                            <span asp-validation-for="UserLogin"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="Password">Пароль:</label>
+                            <input class="form-control" type="password" autocomplete="on" asp-for="Password" placeholder="Введите пароль" required>
+                            <span asp-validation-for="Password"></span>
+                        </div>
+
+                        <div class="form-group form-check">
+                            <input class="form-check-input" type="checkbox" asp-for="RememberMe">
+                            <label class="form-check-label" for="RememberMe">Запомнить меня</label>
+                            <span asp-validation-for="RememberMe"></span>
+                        </div>
+
+                        <div class="form-group text-center">
+                            <button class="btn btn-primary w-100" type="submit">Войти</button>
+                        </div>
+                    </div>
+
+                    <div class="form-group text-center">
+                        <a asp-controller="Account" asp-action="Registration" class="forget">Регистрация</a>
+                    </div>
+
+                    <div class="card-footer text-center">
+                        <a href="#" class="forget">Забыли пароль?</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

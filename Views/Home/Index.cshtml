@@ -1,8 +1,38 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@model IAsyncEnumerable<Interview>
+
+@{
+    ViewData["Title"] = "Главная страница";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Название интервью</th>
+            <th>Дата начала</th>
+            <th>Дата окончания</th>
+            <th>Действия</th>
+        </tr>
+    </thead>
+    <tbody>
+        @await foreach (var interview in Model)
+        {
+            <tr>
+                <td>@interview.Title</td>
+                <td>@interview.StartDate.ToString("dd.MM.yyyy HH:mm")</td>
+                <td>@interview.EndDate.ToString("dd.MM.yyyy HH:mm")</td>
+                @if(DateTime.Now > interview.EndDate)
+                {
+                    <td><a asp-controller="Chat" asp-action="Room" class="link-primary">Просмотреть</a></td>
+                }
+                else if(DateTime.Now < interview.StartDate)
+                {
+                    <td><a asp-controller="Chat" asp-action="Room" class="link-primary">Скоро будет доступно</a></td>
+                }
+                else
+                {
+                    <td><a asp-controller="Chat" asp-action="Room" class="link-primary">Присоединиться к интервью</a></td>
+                }
+            </tr>
+        }
+    </tbody>
+</table>
