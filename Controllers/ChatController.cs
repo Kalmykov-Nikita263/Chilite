@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using Chilite.Domain;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Chilite.Controllers;
@@ -6,12 +7,15 @@ namespace Chilite.Controllers;
 [Authorize]
 public class ChatController : Controller
 {
-    public IActionResult Room() => View();
+    private readonly DataManager _dataManager;
 
-    public IActionResult JoinChat(string userName)
+    public ChatController(DataManager dataManager)
     {
+        _dataManager = dataManager;
+    }
 
-
-        return Json(new { success = true });
+    public async Task<IActionResult> Room(Guid id) 
+    {
+        return View(await _dataManager.InterviewsRepository.GetInterviewByIdAsync(id));
     }
 }

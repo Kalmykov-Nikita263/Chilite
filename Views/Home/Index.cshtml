@@ -7,6 +7,7 @@
 <table class="table">
     <thead>
         <tr>
+            <th>ID интервью</th>
             <th>Название интервью</th>
             <th>Дата начала</th>
             <th>Дата окончания</th>
@@ -17,20 +18,21 @@
         @await foreach (var interview in Model)
         {
             <tr>
+                <td>@interview.InterviewId</td>
                 <td>@interview.Title</td>
                 <td>@interview.StartDate.ToString("dd.MM.yyyy HH:mm")</td>
                 <td>@interview.EndDate.ToString("dd.MM.yyyy HH:mm")</td>
                 @if(DateTime.Now > interview.EndDate)
                 {
-                    <td><a asp-controller="Chat" asp-action="Room" class="link-primary">Просмотреть</a></td>
+                    <td><a asp-controller="Chat" asp-action="Room" asp-route-id="@interview.InterviewId" class="link-primary">Просмотреть</a></td>
                 }
                 else if(DateTime.Now < interview.StartDate)
                 {
-                    <td><a asp-controller="Chat" asp-action="Room" class="link-primary">Скоро будет доступно</a></td>
+                    <td><a href="#" class="link-primary">Скоро будет доступно</a></td>
                 }
                 else
                 {
-                    <td><a asp-controller="Chat" asp-action="Room" class="link-primary">Присоединиться к интервью</a></td>
+                    <td><a asp-controller="Chat" asp-action="Room" asp-route-id="@interview.InterviewId" class="link-primary">Присоединиться к интервью</a></td>
                 }
             </tr>
         }

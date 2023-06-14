@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Chilite.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230612235239_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20230613221150_RoomDeleted")]
+    partial class RoomDeleted
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -50,19 +50,19 @@ namespace Chilite.Migrations
                     b.HasData(
                         new
                         {
-                            AnswerId = new Guid("92be4e29-8e75-4ca3-9fe3-d6425b1287bb"),
+                            AnswerId = new Guid("58261a29-f393-42eb-9436-1f5657fcdeb4"),
                             QuestionId = new Guid("9f52e4cc-1fdd-4e68-bd08-e619929d7b4f"),
                             Text = "Я начал свою карьеру в киноиндустрии с огромным интересом к миру кино и желанием внести свой вклад в создание качественных фильмов. Мои первые работы в этой отрасли были связаны с обучением и приобретением опыта, чтобы развиваться как профессионал.\r\n\r\nМоя первая работа в киноиндустрии была стажером на съемочной площадке фильма независимого производства, где я получил первоначальный опыт в организации съемочного процесса и взаимодействии с командой профессионалов. Затем, я работал на различных проектах в качестве ассистента режиссера и продюсера, где приобрел опыт в планировании и организации съемок, взаимодействии с актерами и экипажем, а также в постановке сцен.\r\n\r\nС течением времени и с накоплением опыта, я продвигался в своей карьере в киноиндустрии, работая на более крупных проектах и занимая более ответственные роли, такие как ассистент режиссера, продюсер, или другие специализированные должности. Мои первые работы в киноиндустрии были важным этапом моего профессионального развития, помогая мне приобрести ценный опыт и знания в этой индустрии, которые я успешно применяю и сегодня в своей карьере в киноиндустрии."
                         },
                         new
                         {
-                            AnswerId = new Guid("4c86e0d0-84c4-42f9-81dd-ae8a9fe0b7e3"),
+                            AnswerId = new Guid("5faa2834-1e68-4117-ae5a-d28c6187a220"),
                             QuestionId = new Guid("b9edad52-a404-4d8b-96d1-190dd8aa054a"),
                             Text = "В течение моей карьеры в киноиндустрии, несколько фильмов и режиссеров оказали существенное влияние на мое творчество. Они вдохновляли меня своим стилем, техническим мастерством и подходом к кинематографу.\r\n\r\nОдин из таких режиссеров, который оказал глубокое влияние на меня, - Стэнли Кубрик. Его фильмы, такие как \"Сияние\", \"Заводной апельсин\", \"Барри Линдон\" и \"Сияние\", впечатлили меня своим неповторимым стилем снятия и уникальной визуальной эстетикой. Я был(а) восхищен(а) его аккуратностью в деталях и дерзкими решениями в кинематографической режиссуре, которые сделали его фильмы настоящими произведениями искусства.\r\n\r\nЕще одним режиссером, который оказал влияние на мое творчество, - Кристофер Нолан. Его фильмы, такие как \"Начало\", \"Темный рыцарь\" и \"Интерстеллар\", являются примерами сложной структуры сюжета и инновационных режиссерских приемов. Я восхищался(ась) его способностью создавать глубокие и захватывающие истории, сочетая фантастику с философскими и эмоциональными аспектами.\r\n\r\nТакже стоит отметить фильмы \"Бесславные ублюдки\" Квентина Тарантино и \"Драйв\" Николаса Виндинга Рефна, которые оказали влияние на меня своим ярким стилем, отличной режиссурой и уникальным подходом к кинематографу.\r\n\r\nЭти режиссеры и их фильмы вдохновляют меня в моем творческом процессе и влияют на мой подход к созданию фильмов"
                         },
                         new
                         {
-                            AnswerId = new Guid("1ee0de84-4a6a-4cc7-b963-0d75b2c58719"),
+                            AnswerId = new Guid("8bc88d6e-9982-43c8-b2e1-84a8a33877b4"),
                             QuestionId = new Guid("598f908c-c02d-4e1b-904f-1da660c3bccd"),
                             Text = "Когда я выбираю проекты, над которыми хочу работать, я придерживаюсь нескольких принципов. Прежде всего, я уделяю внимание сценарию. Для меня важно, чтобы история была интересной, оригинальной и вызывала эмоциональный отклик. Я также обращаю внимание на режиссера и его/ее предыдущий опыт, стиль и подход к кинематографу.\r\n\r\nДалее, я анализирую бюджет и ресурсы проекта. Это включает оценку финансовых аспектов, продолжительности съемок, условий работы и других практических факторов. Я стараюсь выбирать проекты, которые предлагают адекватное финансовое вознаграждение и условия работы, соответствующие моим профессиональным навыкам и ожиданиям.\r\n\r\nТакже я учитываю команду проекта. Важно работать с профессионалами, которые разделяют мои ценности и подходы к работе. Команда должна быть сплоченной и иметь опыт в реализации аналогичных проектов.\r\n\r\nЯ также обращаю внимание на потенциал проекта. Если проект предлагает новые вызовы, возможность для профессионального роста, расширения моих навыков или участия в уникальных и значимых проектах, это может стать решающим фактором в выборе проекта.\r\n\r\nНаконец, я также учитываю свою личную мотивацию и интерес к проекту. Если история или концепция проекта вызывают у меня эмоциональное влечение или внутреннюю мотивацию, это может стать дополнительным стимулом для выбора проекта.\r\n\r\nКороче говоря, при выборе проектов, над которыми хочу работать, я учитываю сценарий, режиссера, бюджет и ресурсы проекта, команду, потенциал проекта и свою личную мотивацию. Эти факторы взвешиваются вместе, чтобы определить, какие проекты соответствуют моим профессиональным и личным целям."
                         });
@@ -77,10 +77,6 @@ namespace Chilite.Migrations
                     b.Property<DateTime>("EndDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("RoomId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
-
                     b.Property<DateTime>("StartDate")
                         .HasColumnType("datetime2");
 
@@ -94,8 +90,6 @@ namespace Chilite.Migrations
 
                     b.HasKey("InterviewId");
 
-                    b.HasIndex("RoomId");
-
                     b.HasIndex("UserId");
 
                     b.ToTable("Interviews");
@@ -104,9 +98,8 @@ namespace Chilite.Migrations
                         new
                         {
                             InterviewId = new Guid("607ed998-da08-11ed-afa1-0242ac120002"),
-                            EndDate = new DateTime(2023, 6, 13, 4, 52, 38, 828, DateTimeKind.Local).AddTicks(3373),
-                            RoomId = "00000000-0000-0000-0000-000000000000",
-                            StartDate = new DateTime(2023, 6, 13, 3, 52, 38, 828, DateTimeKind.Local).AddTicks(3360),
+                            EndDate = new DateTime(2023, 6, 14, 3, 11, 50, 521, DateTimeKind.Local).AddTicks(5809),
+                            StartDate = new DateTime(2023, 6, 14, 2, 11, 50, 521, DateTimeKind.Local).AddTicks(5797),
                             Title = "За кадром: жизнь и карьера режиссера",
                             UserId = "CEE0ABB0-E53A-44E2-8287-87A3DCE8E7E2"
                         });
@@ -150,16 +143,6 @@ namespace Chilite.Migrations
                             InterviewId = new Guid("607ed998-da08-11ed-afa1-0242ac120002"),
                             Text = "Как вы выбираете проекты, над которыми хотите работать?"
                         });
-                });
-
-            modelBuilder.Entity("Chilite.Domain.Entities.Room", b =>
-                {
-                    b.Property<string>("RoomId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.HasKey("RoomId");
-
-                    b.ToTable("Room");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -299,13 +282,13 @@ namespace Chilite.Migrations
                         {
                             Id = "CEE0ABB0-E53A-44E2-8287-87A3DCE8E7E2",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "2ae9644f-e619-4149-8470-660b7a37a347",
+                            ConcurrencyStamp = "db621e3a-1da3-423f-b9ae-5710e41da1a7",
                             Email = "InterView@email.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "INTERVIEW@EMAIL.COM",
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAIAAYagAAAAEO6RKQH17nfAx2e1xPSs3qvawVZSqrCA9azNIUx7E7+rHmg3cgHIgK9muCXazYFlLQ==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEJ3dKknes/2u/YLgOuhFeMhMnWz2ymZmeAsHi+lymw181ctl1lbQ0wpUfliatSG81Q==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
@@ -421,19 +404,11 @@ namespace Chilite.Migrations
 
             modelBuilder.Entity("Chilite.Domain.Entities.Interview", b =>
                 {
-                    b.HasOne("Chilite.Domain.Entities.Room", "Room")
-                        .WithMany("Interviews")
-                        .HasForeignKey("RoomId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("Chilite.Domain.Entities.ApplicationUser", "User")
                         .WithMany("Interviews")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("Room");
 
                     b.Navigation("User");
                 });
@@ -508,11 +483,6 @@ namespace Chilite.Migrations
             modelBuilder.Entity("Chilite.Domain.Entities.Question", b =>
                 {
                     b.Navigation("Answers");
-                });
-
-            modelBuilder.Entity("Chilite.Domain.Entities.Room", b =>
-                {
-                    b.Navigation("Interviews");
                 });
 
             modelBuilder.Entity("Chilite.Domain.Entities.ApplicationUser", b =>

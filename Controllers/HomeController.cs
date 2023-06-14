@@ -19,7 +19,9 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        return View(_dataManager.InterviewsRepository.GetAllInterviewsAsync().Where(i => i.UserId == User.FindFirst(ClaimTypes.NameIdentifier).Value));
+        return View(_dataManager.InterviewsRepository
+            .GetAllInterviewsAsync()
+            .Where(i => i.UserInterviews.Any(ui => ui.UserId == User.FindFirst(ClaimTypes.NameIdentifier).Value)));
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
